@@ -1,5 +1,4 @@
 import React,{Component} from 'react'
-import Header from '@/components/Header/index'
 import { Carousel } from 'antd';
 import './index.less'
 import NewsCenter from './components/NewsCenter/index'
@@ -9,7 +8,6 @@ export default class extends Component{
   render(){
     return (
       <div>
-        <Header/>
         <div className="main">
           {/*轮播*/}
           <Carousel autoplay>
@@ -25,7 +23,6 @@ export default class extends Component{
           {/*新闻中心*/}
           <NewsCenter/>
         </div>
-        <Footer/>
       </div>
     )
   }

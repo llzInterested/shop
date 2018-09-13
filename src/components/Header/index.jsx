@@ -1,5 +1,6 @@
 import React,{Component} from 'react'
 import { Input,Menu,Icon,Row,Col,Avatar,Drawer } from 'antd';
+import {NavLink} from 'react-router-dom'
 import './index.less'
 import api from '@/api/api'
 
@@ -37,11 +38,11 @@ export default class extends Component{
               <Menu
                 theme="light"
                 mode="horizontal"
-                defaultSelectedKeys={['2']}
+                defaultSelectedKeys={['1']}
                 className="header-menu"
               >
-                <Menu.Item key="1">nav 1</Menu.Item>
-                <Menu.Item key="2">nav 2</Menu.Item>
+                <Menu.Item key="1"><NavLink to="/index">首页</NavLink></Menu.Item>
+                <Menu.Item key="2"><NavLink to="/abort">走进宝信</NavLink></Menu.Item>
                 <Menu.Item key="3">nav 3</Menu.Item>
                 <Menu.Item key="4">nav 4</Menu.Item>
                 <Menu.Item key="5">nav 5</Menu.Item>
@@ -72,11 +73,18 @@ export default class extends Component{
               onClose={this.onClose}
               visible={this.state.navigationVisible}
             >
-              <p>Nav 1</p>
+              <p>走进宝信</p>
               <p>Nav 2</p>
               <p>Nav 3</p>
               <p>Nav 4</p>
               <p>Nav 5</p>
+              <div className="login">
+                <Avatar icon="user"/> 登录 注册
+              </div>
+              <Search
+                  onSearch={value => console.log(value)}
+                  enterButton
+              />
             </Drawer>
           </div>
         </div>

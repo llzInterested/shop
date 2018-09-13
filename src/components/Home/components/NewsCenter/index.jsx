@@ -81,6 +81,9 @@ export default class extends Component{
   componentDidMount(){
     this.startAnimation(this.state.direction);
   }
+  componentWillUnmount(){
+    cancelAnimationFrame(this.state.timer);
+  }
   render(){
     const {cardData,contentLeft} = this.state;
     console.log(contentLeft);

@@ -1,4 +1,5 @@
 import React,{Component} from 'react'
+import {Button,Icon} from 'antd'
 import './index.less'
 import '@/index.less'
 export default class extends Component{
@@ -23,8 +24,19 @@ export default class extends Component{
               </ul>
             </div>
           </div>
-          <div className="itemList">3</div>
-          <div className="itemList">4</div>
+          <div className="itemList">
+            <h3>关注我们</h3>
+            <div>
+              <Button icon="weibo"/>
+              <Button icon="wechat"/>
+              <Button icon="qq"/>
+            </div>
+          </div>
+          <div className="itemList">
+            <h3>联系客服</h3>
+            <p className="phone">025-5705809</p>
+            <div className="contact"><Button icon="phone">联系客服</Button></div>
+          </div>
         </footer>
       </div>
     )
