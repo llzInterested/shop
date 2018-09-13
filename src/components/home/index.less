@@ -1,0 +1,30 @@
+.main{
+  min-height:400px;
+  .ant-carousel{
+    .slick-list{
+      max-height:500px;
+    }
+    @media screen and (max-width: 767px) {
+      .slick-list{
+        max-height:300px;
+      }
+    }
+    .slick-dots{
+      button{
+        width:20px;
+      }
+      li.slick-active{
+        button{
+          width:30px;
+        }
+      }
+    }
+  }
+  .charmShow{
+    min-height:500px;
+    background-color: aqua;
+  }
+  @media screen and (max-width:767px){
+    min-height:300px;
+  }
+}

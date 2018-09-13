@@ -1,0 +1,30 @@
+.newsCenter{
+  max-width:1000px;
+  margin:0 auto;
+  font-size:20px;
+  .title{
+    overflow: hidden;
+    .newsIcon{
+      float:right;
+      .anticon{
+        font-size: 2em;
+      }
+    }
+  }
+  .content {
+    position: relative;
+    overflow: hidden;
+    height: 270px;
+    .content-main {
+      position: absolute;
+      left:0;
+      width:3000px;
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      justify-items: center;
+    }
+  }
+  .ant-btn{
+    margin-top:20px;
+  }
+}

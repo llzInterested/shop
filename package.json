@@ -10,12 +10,6 @@
   },
   "author": "llz",
   "license": "ISC",
-  "proxy":{
-    "/*":{
-      "target":"http://localhost:8080",
-      "changeOrigin":true
-    }
-  },
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
