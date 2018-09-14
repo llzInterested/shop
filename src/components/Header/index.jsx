@@ -5,12 +5,20 @@ import './index.less'
 import api from '@/api/api'
 
 const Search = Input.Search;
+const routeData = [
+  {index:'1',path:'/index'},
+  {index:'2',path:'/abort'},
+  {index:'3',path:'/business'},
+  {index:'4',path:'/news'},
+  {index:'5',path:'/contact'},
+];
 
 export default class extends Component{
   constructor(){
     super();
     this.state = {
-      navigationVisible:false,  //导航栏是否可见
+      navigationVisible:false,  //导航栏是否可见,
+      selected:'1',   //选中第几个导航栏
     }
   }
   onClose = () => {
@@ -23,10 +31,24 @@ export default class extends Component{
       navigationVisible: true,
     });
   };
+  getSelected = () => {
+    let selected = '0';
+    routeData.forEach(value => {
+      value.path === location.pathname ? selected = value.index : '';
+    });
+    this.setState({selected});
+  }
   toggleNavigation = () => {
     api.toggleClass(this.refs.navigationList,'navigation-list-active');
   };
+  componentWillReceiveProps(){
+    this.getSelected();
+  }
+  componentDidMount(){
+    this.getSelected();
+  }
   render(){
+    const {selected} = this.state;
     return(
       <div className="header">
         <Row type="flex" justify="space-around" align="middle" className='pc'>
@@ -38,14 +60,14 @@ export default class extends Component{
               <Menu
                 theme="light"
                 mode="horizontal"
-                defaultSelectedKeys={['1']}
+                selectedKeys={[selected]}
                 className="header-menu"
               >
-                <Menu.Item key="1"><NavLink to="/index">首页</NavLink></Menu.Item>
-                <Menu.Item key="2"><NavLink to="/abort">走进宝信</NavLink></Menu.Item>
-                <Menu.Item key="3">nav 3</Menu.Item>
-                <Menu.Item key="4">nav 4</Menu.Item>
-                <Menu.Item key="5">nav 5</Menu.Item>
+                <Menu.Item key="1"><NavLink to="/index">nav 1</NavLink></Menu.Item>
+                <Menu.Item key="2"><NavLink to="/abort">nav 2</NavLink></Menu.Item>
+                <Menu.Item key="3"><NavLink to="/business">nav 3</NavLink></Menu.Item>
+                <Menu.Item key="4"><NavLink to="/news">nav 4</NavLink></Menu.Item>
+                <Menu.Item key="5"><NavLink to="/contact">nav 5</NavLink></Menu.Item>
               </Menu>
             </Col>
             <Col lg={9} md={9} xl={9} className="header-right">

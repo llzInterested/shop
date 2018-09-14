@@ -104,7 +104,7 @@ export default class extends Component{
                 <Card
                   hoverable="true"
                   style={{ width: 220 }}
-                  cover={<img alt="example" src={require(`${value.src}`)}/>}
+                  cover={<img alt="新闻中心" src={require(`${value.src}`)}/>}
                 >
                   <Meta
                     description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci cupiditate eos"

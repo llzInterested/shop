@@ -1,0 +1,47 @@
+@contact-background:#D12121;
+.contact{
+  .contact-top{
+    .topCard{
+      width:25%;
+      text-align: center;
+      background-color:@contact-background;
+      color:#FFF;
+    }
+  }
+  .centerBtn{
+    margin-left:50%;
+    transform: translateX(-50%);
+    background-color: @contact-background;
+    color:#FFF;
+  }
+  .contact-center{
+    margin:2rem 0;
+    img{
+      width:100%;
+      max-height:500px;
+    }
+  }
+  @media screen and (max-width:767px){
+    .contact-center{
+      img{
+        max-height:300px;
+      }
+    }
+  }
+  .contact-bottom{
+    margin-top:1rem;
+    padding-top:2rem;
+    display: flex;
+    justify-content: space-around;
+    background-color:@contact-background;
+    .ant-card {
+      border: 0;
+      .ant-card-body {
+        background-color:@contact-background;
+        padding: 1.5em 0;
+        .ant-card-meta-description {color: #FFF;}
+        .ant-card-meta-title {color: #FFF;}
+      }
+    }
+  }
+}

@@ -52,5 +52,9 @@ module.exports = {
         alias:{
             '@':path.join(__dirname,'./src')        //@符号表示项目根目录中src目录
         }
+    },
+
+    devServer: {
+      historyApiFallback: true
     }
 }
